@@ -28,8 +28,15 @@ A QR code landing page for BYU Information Systems recruiting. Static, no build 
 - Keep `EDITING-LINKS.md` readable by someone who has never used git. If a change makes editing harder, it is the wrong change.
 - Eight visible links maximum. More means scrolling, and nobody scrolls a page they scanned at a booth.
 
+## Deployment facts
+
+- Live on Vercel, project `byu-is-links`, auto-deploys from `main`.
+- Domain `isbyu.link` (Hover), DNS stays at Hover: two A records to `76.76.21.21` for `@` and `www`.
+- Vercel SSO deployment protection is **off** deliberately. If it ever gets re-enabled, anyone scanning the QR hits a login wall.
+- The `.vercel.app` address is staging only and must never appear on anything printed.
+
 ## Current focus
 
-Scaffold is in place with placeholder links. Two things block launch: the real destination URLs, and the custom domain. The domain must be live and the QR generated against it before the recruiting poster goes to print for Marriott Night on 2026-09-09.
+Scaffold is live with placeholder links. Launch blockers: the real destination URLs in `links.json`, and DNS propagation. The domain must resolve and the QR must be generated against `https://isbyu.link` before the recruiting poster goes to print for Marriott Night on 2026-09-09.
 
 Design work happens in a linked Claude Design project against `DESIGN-BRIEF.md`.

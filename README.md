@@ -64,7 +64,24 @@ Then open <http://localhost:8000>. A plain server is required because `app.js` f
 | Host | Vercel, free Hobby tier |
 | Trigger | Every push to `main` |
 | Build | None. `vercel.json` serves `public/` as static files |
-| Domain | **isbyu.link** (registered at Hover) |
+| Domain | **isbyu.link** (registered at Hover, DNS stays at Hover) |
+| Project | `byu-is-links` under `david-wilson-175s-projects` |
+
+### DNS
+
+DNS is kept at Hover rather than delegated to Vercel, so the registrar stays the single source of truth and a future host change is a two-record edit.
+
+| Type | Host | Value |
+|---|---|---|
+| A | `@` | `76.76.21.21` |
+| A | `www` | `76.76.21.21` |
+
+Vercel issues the TLS certificate automatically once those resolve. Check status with:
+
+```bash
+vercel domains inspect isbyu.link
+dig +short isbyu.link
+```
 
 `vercel.json` sets `Cache-Control: max-age=0` on `links.json` specifically, so edits show up immediately instead of being cached on phones for hours. Assets under `/assets/` are cached hard by contrast, for a year.
 
