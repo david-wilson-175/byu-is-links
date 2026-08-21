@@ -38,6 +38,10 @@
     the <a> itself     gets href
     [data-title]       text set from the link's "title"
     [data-subtitle]    text set from the link's "subtitle"
+
+  DESIGN NOTE: the first link in #links renders as the large primary
+  button, styled entirely by .link:first-child in styles.css. To change
+  which link is primary, reorder links.json. No JS change needed.
 -->
 
 <main class="page">
@@ -45,8 +49,10 @@
   <header class="header">
     <img class="lockup" src="assets/is-lockup.png"
          alt="BYU Department of Information Systems, Marriott School of Business">
-    <h1 class="title" data-page-title>BYU Information Systems</h1>
-    <p class="tagline" data-tagline>Build the future with AI.</p>
+    <div class="header-text">
+      <h1 class="title" data-page-title>BYU Information Systems</h1>
+      <p class="tagline" data-tagline>Build the future with AI.</p>
+    </div>
   </header>
 
   <nav id="links" class="links" aria-label="Quick links">
