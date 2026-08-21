@@ -83,20 +83,6 @@ body {
   font-size: 0.9375rem;
   line-height: 1.25;
   color: var(--pale);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-/* The one cyan dot before the tagline. */
-.tagline::before {
-  content: "";
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--cyan);
-  flex-shrink: 0;
 }
 
 /* ---------- Link buttons ---------- */
