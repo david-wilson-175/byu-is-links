@@ -1,0 +1,46 @@
+{
+  "title": "BYU Information Systems",
+  "tagline": "Build the future with AI.",
+  "links": [
+    {
+      "title": "Join AIS",
+      "subtitle": "Free for freshmen",
+      "url": "#",
+      "enabled": true
+    },
+    {
+      "title": "Upcoming Events",
+      "subtitle": "AIS Academy, Milk & Cookies, and more",
+      "url": "#",
+      "enabled": true
+    },
+    {
+      "title": "Explore the IS Major",
+      "subtitle": "What you learn and where it leads",
+      "url": "#",
+      "enabled": true
+    },
+    {
+      "title": "Careers in IS",
+      "subtitle": "Roles, salaries, and the skills behind them",
+      "url": "#",
+      "enabled": true
+    },
+    {
+      "title": "Keep Me Posted",
+      "subtitle": "Get event invites by email",
+      "url": "#",
+      "enabled": true
+    },
+    {
+      "title": "Talk to an Advisor",
+      "subtitle": "Questions about switching majors",
+      "url": "#",
+      "enabled": false
+    }
+  ],
+  "footer": {
+    "text": "BYU Marriott School of Business",
+    "url": "#"
+  }
+}

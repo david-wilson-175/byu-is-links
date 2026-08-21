@@ -1,0 +1,171 @@
+/*
+ * Baseline styling. Deliberately plain: this is the starting point that
+ * the Claude Design project replaces. See DESIGN-BRIEF.md.
+ *
+ * Brand colors are sampled from the official BYU IS lockup.
+ */
+
+:root {
+  --navy: #19315B;
+  --navy-deep: #08122D;
+  --blue-mid: #376293;
+  --cyan: #9FE9ED;
+  --grey: #7D8990;
+  --pale: #CCD6E0;
+  --white: #FFFFFF;
+
+  --radius: 14px;
+  --gap: 12px;
+  --measure: 30rem; /* Comfortable phone-first column width. */
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(170deg, var(--navy) 0%, var(--navy-deep) 100%);
+  background-attachment: fixed;
+  color: var(--white);
+  min-height: 100svh;
+  line-height: 1.4;
+  -webkit-text-size-adjust: 100%;
+}
+
+.page {
+  max-width: var(--measure);
+  margin: 0 auto;
+  /* Respect notches and home indicators; this is scanned on phones. */
+  padding: max(2rem, env(safe-area-inset-top)) 1.25rem
+           max(2rem, env(safe-area-inset-bottom));
+}
+
+/* ---------- Header ---------- */
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.lockup {
+  width: min(280px, 80%);
+  height: auto;
+  /* The lockup ships in navy on transparent, so invert it on a dark field. */
+  filter: brightness(0) invert(1);
+  margin-bottom: 1.25rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem;
+  letter-spacing: -0.01em;
+}
+
+.tagline {
+  margin: 0;
+  color: var(--pale);
+  font-size: 1rem;
+}
+
+/* ---------- Link buttons ---------- */
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+
+  /* Tap target stays well above the 44px accessibility floor. */
+  min-height: 60px;
+  padding: 0.9rem 1.1rem;
+
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius);
+
+  color: var(--white);
+  text-decoration: none;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.link:hover,
+.link:focus-visible {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.link:active { transform: scale(0.985); }
+
+.link:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+.link-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.link-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.link-subtitle {
+  font-size: 0.85rem;
+  color: var(--pale);
+}
+
+.link-arrow {
+  font-size: 1.5rem;
+  color: var(--cyan);
+  flex-shrink: 0;
+}
+
+/* A link whose URL is still "#" in links.json. */
+.link.is-placeholder {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.link.is-placeholder .link-arrow { visibility: hidden; }
+
+.link.is-placeholder .link-title::after {
+  content: " (coming soon)";
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--grey);
+}
+
+/* ---------- Footer and notices ---------- */
+
+.footer {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--grey);
+}
+
+.notice {
+  text-align: center;
+  color: var(--pale);
+  font-size: 0.9rem;
+}
+
+.notice a { color: var(--cyan); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

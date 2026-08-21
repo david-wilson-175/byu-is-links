@@ -1,0 +1,24 @@
+name: Validate links.json
+
+# Catches broken JSON before it reaches the live page. If a student
+# employee mistypes an edit, this fails and the site keeps serving the
+# last good version.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate public/links.json
+        run: node scripts/validate-links.mjs

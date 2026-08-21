@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BYU Information Systems</title>
+<meta name="description" content="Links, events, and next steps for the BYU Information Systems major.">
+<meta name="theme-color" content="#19315B">
+
+<!-- Social preview. -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://isbyu.link/">
+<meta property="og:title" content="BYU Information Systems">
+<meta property="og:description" content="Build the future with AI.">
+<meta property="og:image" content="https://isbyu.link/assets/is-lockup.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://isbyu.link/">
+
+<link rel="icon" href="assets/is-lockup.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!--
+  STRUCTURE CONTRACT
+
+  app.js fills this page from links.json at load. A designer may restyle
+  anything here freely, but these five hooks must survive or the page
+  goes blank. See DESIGN-BRIEF.md.
+
+    [data-page-title]   text set from links.json "title"
+    [data-tagline]      text set from links.json "tagline"
+    #links              container the buttons are appended into
+    #link-template      cloned once per link
+    [data-footer]       text set from links.json "footer"
+
+  Inside #link-template, these are filled per link:
+    the <a> itself     gets href
+    [data-title]       text set from the link's "title"
+    [data-subtitle]    text set from the link's "subtitle"
+-->
+
+<main class="page">
+
+  <header class="header">
+    <img class="lockup" src="assets/is-lockup.png"
+         alt="BYU Department of Information Systems, Marriott School of Business">
+    <h1 class="title" data-page-title>BYU Information Systems</h1>
+    <p class="tagline" data-tagline>Build the future with AI.</p>
+  </header>
+
+  <nav id="links" class="links" aria-label="Quick links">
+    <!-- Buttons are injected here by app.js -->
+  </nav>
+
+  <noscript>
+    <p class="notice">
+      This page needs JavaScript to load its links.
+      Reach the department directly at
+      <a href="https://marriott.byu.edu">marriott.byu.edu</a>.
+    </p>
+  </noscript>
+
+  <footer class="footer">
+    <p data-footer>BYU Marriott School of Business</p>
+  </footer>
+
+</main>
+
+<!-- One link button. Restyle the markup inside freely; keep the data- hooks. -->
+<template id="link-template">
+  <a class="link" href="#">
+    <span class="link-text">
+      <span class="link-title" data-title></span>
+      <span class="link-subtitle" data-subtitle></span>
+    </span>
+    <span class="link-arrow" aria-hidden="true">&rsaquo;</span>
+  </a>
+</template>
+
+<script src="app.js"></script>
+</body>
+</html>
