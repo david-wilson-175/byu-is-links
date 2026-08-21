@@ -14,3 +14,4 @@ Thumbs.db
 # Node, in case tooling is ever added
 node_modules/
 npm-debug.log*
+.vercel

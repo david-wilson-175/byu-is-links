@@ -66,7 +66,9 @@ Then open <http://localhost:8000>. A plain server is required because `app.js` f
 | Build | None. `vercel.json` serves `public/` as static files |
 | Domain | **isbyu.link** (registered at Hover) |
 
-`vercel.json` sets `Cache-Control: max-age=0` on `links.json` specifically, so edits show up immediately instead of being cached on phones for hours. Assets are cached hard by contrast.
+`vercel.json` sets `Cache-Control: max-age=0` on `links.json` specifically, so edits show up immediately instead of being cached on phones for hours. Assets under `/assets/` are cached hard by contrast, for a year.
+
+Note that `vercel.json` rejects unknown keys, so it cannot carry `//` comments. Document changes to it here instead.
 
 ### First-time setup
 

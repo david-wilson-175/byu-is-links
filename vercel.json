@@ -5,14 +5,12 @@
   "trailingSlash": false,
   "headers": [
     {
-      "//": "links.json must never be cached, or edits take hours to appear on phones.",
       "source": "/links.json",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     },
     {
-      "//": "Static assets are safe to cache hard.",
       "source": "/assets/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
