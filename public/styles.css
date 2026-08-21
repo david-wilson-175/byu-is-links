@@ -105,6 +105,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: var(--gap);
+  /* On anything wider than a phone, keep the buttons a sane width
+     and center them rather than stretching to the column edge. */
+  width: 100%;
+  max-width: 24rem;
+  margin-inline: auto;
 }
 
 .link {
