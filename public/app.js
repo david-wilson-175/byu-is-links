@@ -78,9 +78,13 @@ async function render() {
     document.querySelectorAll('[data-page-title]')
       .forEach(el => { el.textContent = data.title; });
   }
+  const taglines = document.querySelectorAll('[data-tagline]');
   if (data.tagline) {
-    document.querySelectorAll('[data-tagline]')
-      .forEach(el => { el.textContent = data.tagline; });
+    taglines.forEach(el => { el.textContent = data.tagline; });
+  } else {
+    // No tagline in links.json means no tagline on the page. Drop the
+    // element rather than leaving an empty one holding margin.
+    taglines.forEach(el => { el.remove(); });
   }
   if (data.footer && data.footer.text) {
     document.querySelectorAll('[data-footer]')
