@@ -26,7 +26,13 @@
       "enabled": true
     },
     {
-      "title": "Keep Me Posted",
+      "title": "Keep Me Posted by Email",
+      "subtitle": "Tell us you are interested and we will send updates",
+      "url": "https://forms.cloud.microsoft/pages/responsepage.aspx?id=m278xvtRqEi3eZ7lZLQEE8332ezRf-tHlvq5HFLsDclUMkwwTlE4TlRYR1ZRSTkzMktUS0VPNjBFMS4u&route=shorturl",
+      "enabled": true
+    },
+    {
+      "title": "Keep Me Posted on Slack",
       "subtitle": "Join the BYU IS Slack workspace",
       "url": "https://join.slack.com/t/byu-is/shared_invite/zt-48j0yp6td-8DBw2hMO2FNT00Bs3SxySQ",
       "enabled": true
